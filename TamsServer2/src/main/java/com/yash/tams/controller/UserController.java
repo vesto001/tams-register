@@ -2,8 +2,7 @@ package com.yash.tams.controller;
 
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -35,13 +34,13 @@ public class UserController {
 	 * @return
 	 */
 	@RequestMapping(TamsServerUrls.USERS)
-	public List<User> getUsers(HttpServletResponse responce) {
-		
+	public List<User> getUsers() {
+		/*
 		responce.setStatus(200);
 		responce.addHeader("ok", "true");
 		responce.addHeader("Access-Control-Allow-Origin", "*");
 		responce.addHeader("content-type", "application/json");
-		responce.setContentType("application/json");
+		responce.setContentType("application/json");*/
 		return userService.getUsers();
 	}
 	
@@ -56,5 +55,6 @@ public class UserController {
 		//Register user into the database
 		userService.registerUser(user);
 	}
+//	changes are done in victors code
 
 }
